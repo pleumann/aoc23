@@ -13,4 +13,4 @@ else
   INPUT="$2"
 fi
 
-java -cp dist/AdventOfCode23.jar day${1}.Puzzle src/day${1}/${INPUT}
+java -Xss1024M -cp dist/AdventOfCode23.jar day${1}.Puzzle src/day${1}/${INPUT}
