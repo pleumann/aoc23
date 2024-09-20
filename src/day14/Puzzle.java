@@ -153,7 +153,7 @@ public class Puzzle {
      */
     public static void main(String[] args) throws IOException {
         System.out.println();
-        System.out.println("*** AoC 2023.12 TBD ***");
+        System.out.println("*** AoC 2023.14 Parabolic Reflector Dish ***");
         System.out.println();
         
         new Puzzle().solve(new BufferedReader(new FileReader(args[0])));
