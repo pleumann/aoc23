@@ -141,8 +141,8 @@ public class Puzzle {
             System.out.println();
         }
         
-        long center1     = count(2, 2);
-        long center2     = count(3, 2);
+        long center1    = count(2, 2);
+        long center2    = count(3, 2);
         
         long north      = count(0, 2);
         long south      = count(4, 2);
