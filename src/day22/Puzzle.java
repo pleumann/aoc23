@@ -139,7 +139,12 @@ public class Puzzle {
         for (int x = 0; x < 10; x++) {
             System.out.print("  ".repeat(10 - x));
             for (int y = 0; y < 10; y ++) {
-                System.out.printf("%4d  ", map[x][y][z]);
+                int part = map[x][y][z];
+                if (part == 0) {
+                    System.out.print("   .  ");
+                } else {
+                    System.out.printf("\033[7;3" + (part % 8) + "m%4d\033[0m  ", part);
+                }
             }
             System.out.println();
         }
