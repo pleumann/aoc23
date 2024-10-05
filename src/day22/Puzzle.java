@@ -39,26 +39,18 @@ public class Puzzle {
                 int b = map[x][y][z + 1];
                 
                 if (a != b) {
-                    if (a != 0) {
-                        if (!supportFor.containsKey(a)) {
-                            supportFor.put(a, new HashSet());
-                        }
-
-                        if (b != 0) {
-                            System.out.printf("- %d supports %d\n", a, b);
-                            supportFor.get(a).add(b);
-                        }
+                    if (a != 0 && !supportFor.containsKey(a)) {
+                        supportFor.put(a, new HashSet());
                     }
-                    
-                    if (b != 0) {
-                        if (!supportedBy.containsKey(b)) {
-                            supportedBy.put(b, new HashSet());
-                        }
 
-                        if (a != 0) {
-                            System.out.printf("- %d supported by %d\n", b, a);
-                            supportedBy.get(b).add(a);
-                        }
+                    if (b != 0 && !supportedBy.containsKey(b)) {
+                        supportedBy.put(b, new HashSet());
+                    }
+
+                    if (a != 0 && b != 0 && !supportFor.get(a).contains(b)) {
+                        System.out.printf("- %d supports %d\n", a, b);
+                        supportFor.get(a).add(b);
+                        supportedBy.get(b).add(a);
                     }
                 }
             }
@@ -187,7 +179,7 @@ public class Puzzle {
             number++;
             
             if (v[0] != v[3]) {
-                // x axis extent > 1, all other axes extends = 1.
+                // x axis extent > 1, all other axes extents = 1.
                 assert(v[1] == v[4]);
                 assert(v[2] == v[5]);
                 
@@ -209,7 +201,7 @@ public class Puzzle {
                     map[i][v[1]][v[2]] = number;
                 }
             } else if (v[1] != v[4]) {
-                // y axis extent > 1, all other axes extends = 1.
+                // y axis extent > 1, all other axes extents = 1.
                 assert(v[0] == v[3]);
                 assert(v[2] == v[5]);
                 
@@ -231,7 +223,7 @@ public class Puzzle {
                     map[v[0]][i][v[2]] = number;
                 }
             } else {
-                // z axis extent > 1, all other axes extends = 1.
+                // z axis extent > 1, all other axes extents = 1.
                 assert(v[0] == v[3]);
                 assert(v[1] == v[4]);
                 
