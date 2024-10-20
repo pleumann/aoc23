@@ -219,11 +219,11 @@ public class Puzzle {
         }
 
         if (a * b * c == 0) {
-            System.out.println("Oops! No response from Raspberry Pi. :( Please copy the following into Mathematica:");
+            System.out.println("No response from Raspberry Pi. :( Please copy the following into Mathematica:");
             System.out.println();
             System.out.println(equation);
 
-            return -1;
+            return 0;
         }
         
         return a + b + c;
