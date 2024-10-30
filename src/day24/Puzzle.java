@@ -263,17 +263,17 @@ public class Puzzle {
         
         StringBuilder sb = new StringBuilder("Solve[{");
         
-        sb.append("a+t*d==").append(h1.px).append("+t*(").append(h1.dx).append("),");
-        sb.append("b+t*e==").append(h1.py).append("+t*(").append(h1.dy).append("),");
-        sb.append("c+t*f==").append(h1.pz).append("+t*(").append(h1.dz).append("),");
+        sb.append(String.format("a+t*d==%d+t*(%d),", h1.px, h1.dx));
+        sb.append(String.format("b+t*e==%d+t*(%d),", h1.py, h1.dy));
+        sb.append(String.format("c+t*f==%d+t*(%d),", h1.pz, h1.dz));
 
-        sb.append("a+s*d==").append(h2.px).append("+s*(").append(h2.dx).append("),");
-        sb.append("b+s*e==").append(h2.py).append("+s*(").append(h2.dy).append("),");
-        sb.append("c+s*f==").append(h2.pz).append("+s*(").append(h2.dz).append("),");
+        sb.append(String.format("a+s*d==%d+s*(%d),", h2.px, h2.dx));
+        sb.append(String.format("b+s*e==%d+s*(%d),", h2.py, h2.dy));
+        sb.append(String.format("c+s*f==%d+s*(%d),", h2.pz, h2.dz));
 
-        sb.append("a+u*d==").append(h3.px).append("+u*(").append(h3.dx).append("),");
-        sb.append("b+u*e==").append(h3.py).append("+u*(").append(h3.dy).append("),");
-        sb.append("c+u*f==").append(h3.pz).append("+u*(").append(h3.dz).append(")");
+        sb.append(String.format("a+u*d==%d+u*(%d),", h3.px, h3.dx));
+        sb.append(String.format("b+u*e==%d+u*(%d),", h3.py, h3.dy));
+        sb.append(String.format("c+u*f==%d+u*(%d) ", h3.pz, h3.dz));
         
         sb.append("}]");
 
