@@ -26,6 +26,7 @@ public class Puzzle {
      * Represents an edge in the graph we are building.
      */    
     class Edge {
+        
         /**
          * Target node.
          */
@@ -294,6 +295,7 @@ public class Puzzle {
         
         findNodes();
         findEdges();
+        
         dump();
 
         int part1 = explore(start, 0, 0, new HashSet());
@@ -311,6 +313,7 @@ public class Puzzle {
         
         findNodes();
         findEdges();
+        
         dump();
         
         int part2 = explore(start, 0, 0, new HashSet());
