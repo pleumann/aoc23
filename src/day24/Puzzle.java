@@ -138,9 +138,10 @@ public class Puzzle {
         }
 
         /**
-         * Checks whether this hailstone collides with another given hailstone
-         * at some point in time and within the range limits. Treats the two
-         * tailstones as equations. Uses the Gauss solver to solve them.
+         * Checks whether the path of this hailstone collides with the path of
+         * another given hailstone at some point in time and within the range
+         * limits. Treats the two tailstones as equations. Uses the Gauss solver
+         * to solve them.
          */
         boolean intersects(Hailstone other) {
             Gauss g = new Gauss(2);
